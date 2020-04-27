@@ -1,0 +1,463 @@
+@font-face {
+			font-family: "GothamProRegular";
+			src: url("../fonts/GothamProRegular/GothamProRegular.eot");
+			src: url("../fonts/GothamProRegular/GothamProRegular.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/GothamProRegular/GothamProRegular.woff") format("woff"),
+			url("../fonts/GothamProRegular/GothamProRegular.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "GothamProBold";
+			src: url("../fonts/GothamProBold/GothamProBold.eot");
+			src: url("../fonts/GothamProBold/GothamProBold.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/GothamProBold/GothamProBold.woff") format("woff"),
+			url("../fonts/GothamProBold/GothamProBold.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "GothamProBlack";
+			src: url("../fonts/GothamProBlack/GothamProBlack.eot");
+			src: url("../fonts/GothamProBlack/GothamProBlack.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/GothamProBlack/GothamProBlack.woff") format("woff"),
+			url("../fonts/GothamProBlack/GothamProBlack.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "GothamProItalic";
+			src: url("../fonts/GothamProItalic/GothamProItalic.eot");
+			src: url("../fonts/GothamProItalic/GothamProItalic.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/GothamProItalic/GothamProItalic.woff") format("woff"),
+			url("../fonts/GothamProItalic/GothamProItalic.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "GothamProMedium";
+			src: url("../fonts/GothamProMedium/GothamProMedium.eot");
+			src: url("../fonts/GothamProMedium/GothamProMedium.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/GothamProMedium/GothamProMedium.woff") format("woff"),
+			url("../fonts/GothamProMedium/GothamProMedium.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+	@font-face {
+			font-family: "GothamProLight";
+			src: url("../fonts/GothamProLight/GothamProLight.eot");
+			src: url("../fonts/GothamProLight/GothamProLight.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/GothamProLight/GothamProLight.woff") format("woff"),
+			url("../fonts/GothamProLight/GothamProLight.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
+
+body {
+	margin: 0;
+	font-family: GothamProRegular, sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 14px;
+	position: relative;
+}
+.slick-initialized .slick-slide{
+	outline: none !important;
+}
+
+ul, ol{
+	list-style-type: none;
+	margin: 0;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+img{
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+
+/*// CSS BY VLAD*/
+.container{
+	max-width: 1700px;
+	margin: 0 auto;
+	width: 100%;
+}
+.w1135{
+	max-width: 1135px;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+.header__logo{
+	width: 130px;
+}
+.header__logo img{
+	width: 100%;
+	display: block;
+}
+header{
+	padding-top: 20px;
+	position: fixed;
+	width: 100%;
+	background: #ffffff;
+	padding-bottom: 20px;
+}
+.header__wrapper{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+.top-menu{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+.button-recall {
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    font-family: GothamProBold, sans-serif;
+    letter-spacing: 1px;
+    border-width: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 12px 16px;
+    background-color: #e10087;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.button-recall:hover{
+	background-color: #e8217e;
+}
+.wrapper-right-block {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+.top-menu {
+	margin-right: 40px;
+}
+.top-menu {
+	list-style-type: none;
+	padding: 0;
+}
+.top-menu li:not(:last-child){
+	margin-right: 20px;
+}
+.top-menu li a:hover {
+	color: #00adee;
+}
+.top-menu li a {
+	color: #002339;
+	font-family: GothamProBold, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 1;
+    font-weight: 800;
+    border-width: 1px;
+    border-radius: 0px;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    transition: all .3s linear;
+}
+.top-menu li a.sub {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.top-menu li a.active{
+	color: #00adee;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.first-screen{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 150px;
+	padding-bottom: 120px;
+}
+.main-menu{
+	padding-left: 20%;
+}
+.main-menu li a {
+	color: #002339;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 2px;
+    border-width: 1px;
+    background-position: center center;
+    border-color: transparent;
+    display: inline-block;
+    border-style: solid;
+    transition: all .3s linear;
+}
+.main-menu li a:hover {
+	color: #00adee;
+	padding-left: 10px;
+	font-size: 43px;
+}
+.main-menu li{
+	min-height: 47px;
+	margin-bottom: 25px;
+}
+footer {
+	position: relative;
+}
+footer img{
+	width: 100%;
+	height: 300px;
+	display: block;
+}
+.footer__container{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.wrapper__list ul {
+	padding: 0;
+	margin-right: 115px;
+}
+.wrapper__list{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.wrapper__list ul li a{
+    font-size: 13px;
+   	color: rgb(0, 35, 57) !important;
+    line-height: 2;
+    font-weight: 400;
+    text-decoration: none;
+}
+.wrapper__list ul li.title-ul{
+    font-size: 12px;
+    line-height: 1.9;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.footer__info {
+    color: #002339;
+    font-size: 12px;
+    line-height: 1.9;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.form input {
+	color: #000;
+    border: 1px solid #a3a3a3;
+    background-color: #fff;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    outline: none;
+    padding-left: 20px;
+    height: 35px;
+    margin-right: 10px;
+    width: 265px;
+}
+.form button {
+	color: #fff;
+    background-color: #e10087;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    width: 110px;
+    height: 35px;
+    cursor: pointer;
+    padding: 0 15px;
+    display: block;
+    border: 0;
+    outline: none;
+}
+.form {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer__email, .footer__copy {
+	color: #002339;
+    font-size: 13px;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    margin-top: 35px;
+}
+.footer__copy{
+	margin-top: 5px;
+}
+.footer__wrapper {
+	top: 33%;
+	width: 100%;
+	position: absolute;
+}
+.submenu {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+	position: absolute;
+}
+.top-menu li ul {
+	padding: 0;
+}
+.top-menu li.sub:hover > ul{
+	opacity: 1;
+	visibility: visible;
+}
+.top-menu li {
+	position: relative;
+}
+.top-menu li.sub > ul {
+	min-width: 210px;
+    background: #ffffff;
+    text-align: left;
+    max-width: 230px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+    padding: 18px;
+    top: 50px;
+    left: -85px;
+}
+.top-menu li.sub > ul:before{
+	content: '';
+    border: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -5px;
+}
+.top-menu li.sub > ul li:not(:last-child){
+	margin-bottom: 13px;
+}
+.top-menu li.sub > ul li{
+	margin-right: 0;
+}
+.top-menu li.sub > ul li a {
+    color: #002339;
+    font-size: 15px;
+    font-weight: 700;
+}
+.about-us {
+	padding-top: 150px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+.about-us__image img{
+	max-width: 560px;
+}
+.about-us__title {
+	font-size: 42px;
+    line-height: 1.23;
+    font-family: GothamProBold ,sans-serif;
+    font-weight: 600;
+    color: #002339;
+    margin-bottom: 20px;
+}
+.about-us__text {
+	max-width: 560px;
+}
+.about-us__subtitle {
+	font-family: GothamProLight ,sans-serif;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 28px;
+    max-width: 400px;
+    font-size: 16px;
+    line-height: normal;
+}
+.about-us__subtitle:after{
+	content: '';
+    max-width: 50px;
+    width: 100%;
+    height: 3px;
+    background-color: #666;
+    display: block;
+    margin-top: 30px;
+}
+.about__us-description {
+	font-size: 20px;
+    line-height: 1.55;
+    font-family: GothamProLight ,sans-serif;
+    color: #002339;
+}
