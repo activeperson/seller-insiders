@@ -143,17 +143,25 @@ add_action( 'widgets_init', 'seller_insiders_widgets_init' );
  * Enqueue scripts and styles.
  */
 function seller_insiders_scripts() {
-	wp_enqueue_style( 'seller-insiders-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'seller-insiders-style', 'rtl', 'replace' );
+	// wp_enqueue_style( 'seller-insiders-style', get_stylesheet_uri(), array(), _S_VERSION );
+	// wp_style_add_data( 'seller-insiders-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'seller-insiders-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'seller-insiders-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'seller-insiders-slick-js', get_template_directory_uri() . '/assets/js/helpers/slick.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'seller-insiders-waterwheelCarousel', get_template_directory_uri() . '/assets/js/helpers/jquery.waterwheelCarousel.min.js', array(), _S_VERSION, true );
+	
+	wp_enqueue_script( 'seller-insiders-main-js', get_template_directory_uri() . '/assets/js/app.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'seller-insiders-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// wp_enqueue_script( 'seller-insiders-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'seller-insiders-slick-css', get_template_directory_uri() . '/assets/js/helpers/slick.css', array(), _S_VERSION );
+	wp_enqueue_style( 'seller-insiders-main-css', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION );
 }
+function shapeSpace_include_custom_jquery() {
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
+   }
+   add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
+
 add_action( 'wp_enqueue_scripts', 'seller_insiders_scripts' );
 
 /**
@@ -183,3 +191,45 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// remove_filter( 'the_content', 'wpautop' );// для контента
+// remove_filter( 'the_excerpt', 'wpautop' );// для анонсов
+// remove_filter( 'comment_text', 'wpautop' );// для комментарий
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+
+add_action( 'wp_footer', 'redirect_cf7' );
+ 
+function redirect_cf7() {
+	?>
+<!-- 	<script type="text/javascript">
+		document.addEventListener('wpcf7mailsent', function (event) {
+			if ('147' == event.detail.contactFormId) {
+				location = '<?php echo get_home_url(); ?>';
+			}
+		}, false);
+	</script> -->
+<?php }
+
+//свои собственные css-классы у элементов меню start 
+function wph_css_class_to_menu($classes, $item){
+    if( $item->title == "Главная" ){ 
+        $classes[] = "menu-home";
+    }
+    if( $item->title == "Рубрики" ){ 
+        $classes[] = "menu-categories";
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'wph_css_class_to_menu' , 10 , 2); 
+//свои собственные css-классы у элементов меню end
+
+// Удалим слэш на конце, если нужно. Если слэш есть в структуре ЧПУ, то он будет добавляться и к постоянным страницам.
+add_filter( 'user_trailingslashit', 'no_page_slash', 70, 2 );
+function no_page_slash( $string, $type ){
+   global $wp_rewrite;
+
+	if( 'page' === $type && $wp_rewrite->using_permalinks() && $wp_rewrite->use_trailing_slashes )
+		$string = untrailingslashit( $string );
+
+   return $string;
+}

@@ -1,22 +1,73 @@
 $(function() {
+    if ( $(this).scrollTop() > 0){
+       $('.header').addClass('fixed');
+    } else {
+          $('.header').removeClass('fixed');
+    }
+$(window).scroll(function(){
+    if ( $(this).scrollTop() > 0){
+       $('.header').addClass('fixed');
+    } else {
+          $('.header').removeClass('fixed');
+    }
+ });
 
 
- 
+if($(window).width() > 991){
+   var carousel = $(".wrapper-slider-results").waterwheelCarousel();
 
-// $('.reviews__slider').slick({
-// 	 dots: false,
-// 	  infinite: false,
-// 	  speed: 800,
-// 	  slidesToShow: 1,
-// 	  slidesToScroll: 1,
-// 	  centerMode: true,
-// 	  adaptiveHeight: true,
-// 	  variableWidth: true,
-// 	  arrows: true,
+ $('#carousel-left').bind('click', function () {
+    carousel.prev();
+    return false
+  });
 
-// 	  nextArrow: `<svg class="arrows-custom next" style="display: block; width: 17px; position: absolute; right: -40px; top: 40%;" viewBox="0 0 17.3 33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <desc>Left</desc> <polyline fill="none" stroke="#222" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="1" points="0.5,0.5 16.5,16.5 0.5,32.5"></polyline> </svg>`,
-// 	  prevArrow: `<svg class="arrows-custom prev" style="display: block; transform: rotate(180deg);  width: 17px; position: absolute; top: 40%; left: -40px;" viewBox="0 0 17.3 33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <desc>Right</desc> <polyline fill="none" stroke="#222" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="1" points="0.5,0.5 16.5,16.5 0.5,32.5"></polyline> </svg>`
-// });
+  $('#carousel-right').bind('click', function () {
+    carousel.next();
+    return false;
+  });
+} else {
+	$('.top-menu li.menu-item-has-children').on('click', function(){
+		$(this).children('.sub-menu').toggleClass('active-mobile-menu');
+	});
+  $('.wrapper-slider-results').slick({
+      dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    centerMode: true,
+    prevArrow: $('#carousel-left'),
+    nextArrow: $('#carousel-right'),
+   variableWidth: true
+  });
+}
+
+if($(window).width() < 768){
+  $('.blog__global-wrapper').slick({
+    dots: true,
+    slidesToShow: 1,
+    arrows: false,
+  });
+}
+
+	
+	
+//  style="display: block; width: 17px; position: absolute; right: -40px; top: 40%;"
+if($('.reviews__slider').length > 0) {
+	$('.reviews__slider').slick({
+		dots: false,
+		 infinite: true,
+		 speed: 300,
+		 slidesToShow: 1,
+		 slidesToScroll: 1,
+		 centerMode: true,
+		 adaptiveHeight: true,
+		 arrows: true,
+		 nextArrow: `<img style="display: block; width: 90px; min-width: 90px; position: absolute; right: -40px; top: 40%;" id="carousel-right" src="http://test.elite-mebel.kiev.ua/wp-content/themes/seller-insiders/assets/images/homepage/hp-arrow-right.png">`,
+		 prevArrow: `<img style="display: block; width: 90px; min-width: 90px; position: absolute; left: -40px; top: 40%;" id="carousel-left" src="http://test.elite-mebel.kiev.ua/wp-content/themes/seller-insiders/assets/images/homepage/hp-arrow.png">`
+   });
+}
+
 
 
 
@@ -24,6 +75,23 @@ $(function() {
 let burger = document.querySelector('.mobile-burger');
 burger.addEventListener('click', function() {
 	document.body.classList.toggle('active');
+});
+let form = document.querySelector('.modal-recall form');
+let closeModal = document.querySelector('.modal-recall');
+let buttonAction = document.querySelectorAll('.open-modal');
+
+for(let i = 0; i < buttonAction.length; i++){
+	buttonAction[i].addEventListener('click', function(){
+		document.body.classList.add('modal-active');
+		document.body.classList.remove('active');
+	});
+}
+form.addEventListener('click', function(e){
+	e.stopPropagation();
+})
+closeModal.addEventListener('click', function(e){
+	e.stopPropagation();
+	document.body.classList.remove('modal-active');
 });
 
   
